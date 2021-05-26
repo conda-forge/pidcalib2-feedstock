@@ -33,6 +33,7 @@ requirements:
     - tqdm
     - uproot
     - uproot3
+    - xrootd >=5.2
 
 test:
   imports:
