@@ -1,5 +1,5 @@
 {% set name = "pidcalib2" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pidcalib2-{{ version }}.tar.gz
-  sha256: 93e4a7eaaf3c693ef385e045c0304e6f390115f5f3de3fb1b0057d054a293fe8
+  sha256: f467bb890da43cbef737242c9a77a708eefd37a3938168c5654cb17e45018239
 
 build:
   number: 0
