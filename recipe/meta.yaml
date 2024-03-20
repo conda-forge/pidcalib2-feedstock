@@ -54,8 +54,8 @@ test:
     # Can't be tested without installing ROOT
     # - pidcalib2.ref_calib --help
     # - pidcalib2.merge_trees --help
-    - pidcalib2.pklhisto2root --help
-    - pidcalib2.plot_calib_distributions --help
+    # - pidcalib2.pklhisto2root --help
+    # - pidcalib2.plot_calib_distributions --help
   requires:
     - pip
 
