@@ -1,5 +1,5 @@
 {% set name = "pidcalib2" %}
-{% set version = "1.1.3" %}
+{% set version = "1.2.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pidcalib2-{{ version }}.tar.gz
-  sha256: c49c3cccef5a8274242b32d63de0283751a9a76084502220de53b38b6f0d66e2
+  sha256: 14e04f64dc71943545be4388ecd98219d282d7ce3a242a5c9515df1585955b03
 
 build:
   number: 0
@@ -17,23 +17,31 @@ build:
     - pidcalib2.make_eff_hists = pidcalib2.make_eff_hists:main
     - pidcalib2.ref_calib = pidcalib2.ref_calib:main
     - pidcalib2.merge_trees = pidcalib2.merge_trees:main
+    - pidcalib2.pklhisto2root = pidcalib2.pklhisto2root:main
+    - pidcalib2.plot_calib_distributions = pidcalib2.plot_calib_distributions:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
-    - setuptools-scm
+    - python >=3.7
+    - setuptools-scm >=3.4
+    - setuptools >=30.3.0
+    - wheel
   run:
     - boost-histogram
     - lb-telemetry
     - logzero
     - numpy
     - pandas
-    - python >=3.6
+    - python >=3.7
     - tqdm
-    - uproot
+    - uproot >=4.2.1
     - uproot3
+    - matplotlib-base
+    - mplhep
+    - xrootd >=5.2
+    - apd
 
 test:
   imports:
@@ -46,6 +54,8 @@ test:
     # Can't be tested without installing ROOT
     # - pidcalib2.ref_calib --help
     # - pidcalib2.merge_trees --help
+    # - pidcalib2.pklhisto2root --help
+    # - pidcalib2.plot_calib_distributions --help
   requires:
     - pip
 
