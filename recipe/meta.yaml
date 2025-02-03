@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pidcalib2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pidcalib2-{{ version }}.tar.gz
   sha256: d5ec41930caee267226338cbded2a63eb46fe52b29052372684f1afe513a21be
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pidcalib2.make_eff_hists = pidcalib2.make_eff_hists:main
@@ -24,7 +24,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools-scm >=3.4
     - setuptools >=30.3.0
     - wheel
@@ -34,7 +34,7 @@ requirements:
     - logzero
     - numpy
     - pandas
-    - python >=3.7
+    - python >={{ python_min }}
     - tqdm
     - uproot >=4.2.1
     - uproot3
@@ -58,6 +58,7 @@ test:
     # - pidcalib2.plot_calib_distributions --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.cern.ch/lhcb-rta/pidcalib2
