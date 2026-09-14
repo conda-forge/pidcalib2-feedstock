@@ -191,7 +191,5 @@ Feedstock Maintainers
 * [@chrisburr](https://github.com/chrisburr/)
 * [@dcervenkov](https://github.com/dcervenkov/)
 * [@seophine](https://github.com/seophine/)
-
-
-<!-- dummy commit to enable rerendering -->
+* [@zsn0000000](https://github.com/zsn0000000/)
 
